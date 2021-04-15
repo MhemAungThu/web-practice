@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>CSS Grid</title>
+    <style>
+        .d1 {
+            background: LightSkyBlue;
+        }
+
+        .d2 {
+            background: lightsalmon;
+        }
+
+        .d3 {
+            background: lightseagreen;
+        }
+        
+        .d4 {
+            background: lightpink;
+        }
+
+        .d5 {
+            background-color: lightskyblue;
+            grid-column: 2/4;
+            grid-row: 2/4;
+            justify-self: center;
+            align-self: end;
+        }
+        
+        .container {
+            font-size: 40px;
+            text-align: center;
+            width: 100%;
+            background: LightGrey;
+            display: grid;
+            grid-template-columns: 100px 100px 100px;
+            grid-template-rows: 100px 100px;
+            grid-gap: 10px 20px;
+            /* justify-items: center; is used to justify all items, it is place in the container. */
+        }
+
+        /* ---------- modify grid on my own way ---------- */
+        .new-container {
+            margin-top: 50px;
+            display: grid;
+            width: 100%;
+            height: 400px;
+            background: grey;
+            grid-template-columns: 0.5fr 1fr 1fr 1fr;  
+            grid-template-rows: 1fr 1fr 1fr 1fr;
+            grid-gap: 20px;
+            grid-template-areas: "header header header header" 
+                                "nav content content advert"
+                                "nav content content advert"
+                                "footer footer footer footer";
+
+        }
+        .new-d1 {
+            background-color: lightblue;
+            grid-area: header;
+            text-align: center;
+        }
+        .new-d2 {
+            background-color: lightgreen;
+            grid-area: nav;
+        }
+        .new-d3 {
+            background-color: lightpink;
+            grid-area: content;
+        }
+        .new-d4 {
+            background-color: paleturquoise;
+            grid-area: advert;
+        }
+        .new-d5 {
+            background-color: lightsalmon;
+            grid-area: footer;
+        }
+        p {
+            display: relative;
+            text-align: center;
+        }
+        h1 {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+
+        <div class="d1">1</div>
+        <div class="d2">2</div>
+        <div class="d3">3</div>
+        <div class="d4">4</div>
+        <div class="d5">5</div>
+    </div>
+
+    <div class="new-container">
+        <div class="new-d1"><h1>This is heading</h1></div>
+        <div class="new-d2"><p>Navigation bar</p></div>
+        <div class="new-d3"><p>Content of the webpage.</p></div>
+        <div class="new-d4"><p>Area for adverdisement.</p></div>
+        <div class="new-d5"><p>This is footer</p></div>
+    </div>
+</body>
+
+</html>
